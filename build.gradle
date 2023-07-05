@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    implementation 'org.testng:testng:7.5'
+
+    compileOnly 'org.projectlombok:lombok:1.18.22'//main
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.16'//in test
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+    implementation 'ch.qos.logback:logback-classic:1.2.8'
+
+}
+
+test {
+    useTestNG()
+}

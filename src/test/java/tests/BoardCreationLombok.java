@@ -17,6 +17,7 @@ public class BoardCreationLombok extends TestBase{
     @Test
     public void boardCreationTest() {
         BoardLombok boardLombok = BoardLombok.builder().name("AAAA").build();
+
             app.getUserHelper().pause(1000);
             //  int before = app.getBoardHelper().NumberBoards();
             app.getBoardHelper().pressCreateButton();
@@ -28,4 +29,5 @@ public class BoardCreationLombok extends TestBase{
             app.getUserHelper().pause(2000);
             int after = app.getBoardHelper().NumberBoards();
             app.getUserHelper().pause(3000);
+
 }}

@@ -13,51 +13,22 @@ public class BoardDeletion extends TestBase{
         }
     }
     @Test
-    public void boardDeletionTest() {
-        if (app.getBoardHelper().NumberBoards() >= 2) {
-            while (app.getBoardHelper().NumberBoards()>2) {
-                int before = app.getBoardHelper().NumberBoards();
-                app.getBoardHelper().pressFirstBoardSpot();
-                app.getBoardHelper().pause(2000);
-                app.getBoardHelper().boardDeletionPath();
-                app.getBoardHelper().pause(2000);
-                int after = app.getBoardHelper().NumberBoards();
-                app.getBoardHelper().pause(5000);
-                //Assert.assertEquals(before, after + 1);
-            }
-            System.out.println("there are not already any boards for deletion");
+    public void deletionBoardTest(){
+        while (app.getBoardHelper().boardCounter() > 1) {
+            app.getBoardHelper().selectFirstBoard();
+            app.getBoardHelper().pause(3000);
+            app.getBoardHelper().openMenu1();
+            app.getBoardHelper().pause(3000);
+            app.getBoardHelper().openMenuMore();
+            app.getBoardHelper().pause(3000);
+            app.getBoardHelper().closeBoard();
+            app.getBoardHelper().pause(2000);
+
         }
-//        app.getBoardHelper().pressFirstBoardSpot();
-//        int i = app.getBoardHelper().boardsNumber();
-//        for (i = 0; i < app.getBoardHelper().boardsNumber(); i++) {
-//
-//            int before = app.getBoardHelper().getBoardsNumber();
-//            app.getBoardHelper().pause(2000);
-//            //app.getBoardHelper().pressFirstBoardSpot();
-//            app.getBoardHelper().boardDeletionPath();
-//            app.getBoardHelper().pause(2000);
-//            int after = app.getBoardHelper().NumberBoards();
-//            app.getBoardHelper().pause(5000);
-//            Assert.assertEquals(before, after + 1);
-//            if (app.getBoardHelper().NumberBoards() == 1) {
-//
-//            }
+    }
 
-//        }
 
-//        @Test
-//        public void boardDeletionTest () {
-//            app.getBoardHelper().openMenu();
-//            app.getUserHelper().pause(2000);
-//            app.getBoardHelper().pressMore();
-//            app.getUserHelper().pause(2000);
-//            app.getBoardHelper().pressCloseBoard();
-//            app.getUserHelper().pause(2000);
-//            app.getBoardHelper().submitCloseButton();
-//            app.getUserHelper().pause(2000);
-//            app.getBoardHelper().pressPermanentlyDelete();
-//            app.getUserHelper().pause(2000);
-//            app.getBoardHelper().pressDeleteButton();
+
 
     }
-}
+

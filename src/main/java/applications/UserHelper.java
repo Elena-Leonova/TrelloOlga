@@ -61,7 +61,7 @@ public class UserHelper extends HelperBase{
     }
     public void login(){
         openLoginForm();
-        fillLoginForm(new User().withEmail("maxmayzel@gmail.com").withPassword("Rfrnec7_*"));
+        fillLoginForm(new User().withEmail("or220719@gmail.com").withPassword("12345%QWqw"));
         submitLogIn();
         pause(3000);
     }

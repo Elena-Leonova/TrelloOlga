@@ -1,6 +1,6 @@
 package tests;
 
-import models.Board;
+import applications.MyDataProvider;
 import models.BoardLombok;
 import org.openqa.selenium.By;
 import org.testng.annotations.BeforeMethod;
@@ -14,10 +14,9 @@ public class BoardCreationLombok extends TestBase{
             app.getUserHelper().login();
         }
     }
-    @Test
-    public void boardCreationTest() {
-        BoardLombok boardLombok = BoardLombok.builder().name("AAAA").build();
-
+    @Test(dataProvider = "boardModelLomData",dataProviderClass = MyDataProvider.class)
+    public void boardCreationTest(BoardLombok boardLombok) {
+        //BoardLombok boardLombok = BoardLombok.builder().name("AAAA").build();
             app.getUserHelper().pause(1000);
             //  int before = app.getBoardHelper().NumberBoards();
             app.getBoardHelper().pressCreateButton();
@@ -30,4 +29,24 @@ public class BoardCreationLombok extends TestBase{
             int after = app.getBoardHelper().NumberBoards();
             app.getUserHelper().pause(3000);
 
-}}
+}
+    @Test(dataProvider = "boardData",dataProviderClass = MyDataProvider.class)
+    public void boardCreationTest1(String title) {
+
+        app.getUserHelper().pause(1000);
+        //  int before = app.getBoardHelper().NumberBoards();
+        app.getBoardHelper().pressCreateButton();
+        app.getUserHelper().pause(3000);
+        app.getBoardHelper().fillBoardForm(title);
+        app.getBoardHelper().submitCreate();
+        app.getUserHelper().pause(3000);
+        app.getBoardHelper().pressBoard();
+        app.getUserHelper().pause(2000);
+        int after = app.getBoardHelper().NumberBoards();
+        app.getUserHelper().pause(3000);
+
+    }
+
+    }
+
+

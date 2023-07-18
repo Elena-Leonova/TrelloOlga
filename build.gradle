@@ -27,3 +27,20 @@ dependencies {
 test {
     useTestNG()
 }
+task log(type:Test){
+    useTestNG(){
+        def groups = System.getProperty('groups')
+        if(groups!=null){
+            includeGroups groups
+        }
+
+        def suite=System.getProperty('suit','')
+        if(suite.equals('login')){
+            suites'src/test/resources/login.xml'
+
+        }else if (suite.equals('board'))
+           suites'src/test/resources/board.xml'
+    }
+    if(project.hasProperty('browser'))
+        systemProperty('browser',${browser})
+}

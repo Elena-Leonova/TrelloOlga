@@ -13,6 +13,7 @@ public class Login extends TestBase{
     public void preCondition(){
         if(app.getUserHelper().isLogged()){
             app.getUserHelper().LogOut();
+            app.getUserHelper().pause(3000);
         }
     }
     @Test(priority = 1)
@@ -23,7 +24,7 @@ public class Login extends TestBase{
         app.getUserHelper().pause(10000);
         Assert.assertTrue(app.getUserHelper().isElementPresent(By.xpath("//span[@class='DweEFaF5owOe02 V_PnoJ2AynVwLp G6CmOLx93OUZez']")));
     }
-    @Test (dataProvider = "UserDataProvider",dataProviderClass = DataProviderUser.class)
+    @Test (dataProvider = "UserDataProvider",dataProviderClass = DataProviderUser.class,priority = 2)
     public void positiveLoginTestDP(User user){
         app.getUserHelper().openLoginForm();
         app.getUserHelper().fillLoginForm(user);
@@ -36,12 +37,12 @@ public class Login extends TestBase{
         app.getUserHelper().openLoginForm();
         app.getUserHelper().fillLoginForm(new User().withEmail("or220719@gmail.com").withPassword("12345%QWq"));
         app.getUserHelper().submitLogIn();
-        app.getUserHelper().pause(10000);
+        app.getUserHelper().pause(4000);
         //Assert.assertTrue(app.getUserHelper()
                // .isElementPresent(By.xpath("//span[contains(text(),'Incorrect email address and / or password. If you ')]")));
 
     }
-        // @Test(priority = 2)
+        @Test(enabled = false)
     public void logOutTest(){
         if(app.getUserHelper().isElementPresent(By.xpath("//span[@class='DweEFaF5owOe02 V_PnoJ2AynVwLp G6CmOLx93OUZez']"))) {
             app.getUserHelper().openAccountForm();

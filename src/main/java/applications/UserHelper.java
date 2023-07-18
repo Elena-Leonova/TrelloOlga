@@ -14,7 +14,7 @@ public class UserHelper extends HelperBase{
     }
     public void openLoginForm() {
         click(By.xpath("//a[@class='Buttonsstyles__Button-sc-1jwidxo-0 kTwZBr']"));
-    }
+     }
 
     public void fillLoginForm(User user) {
         type(By.xpath("//input[@id='user']"), user.getEmail());

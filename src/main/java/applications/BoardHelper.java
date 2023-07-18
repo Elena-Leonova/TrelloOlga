@@ -167,5 +167,8 @@ public class BoardHelper extends HelperBase {
     public void selectCreateBoard() {
         click(By.xpath("//*[text()='Create board']"));
     }
+
+
+
 }
 

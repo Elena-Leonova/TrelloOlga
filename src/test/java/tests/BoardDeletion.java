@@ -12,7 +12,7 @@ public class BoardDeletion extends TestBase{
             app.getUserHelper().login();
         }
     }
-    @Test(enabled = false)
+    @Test (groups = {"group","smoke"})
     public void deletionBoardTest(){
         while (app.getBoardHelper().boardCounter() > 1) {
             app.getBoardHelper().selectFirstBoard();
@@ -26,7 +26,7 @@ public class BoardDeletion extends TestBase{
 
         }
     }
-    @Test
+    //@Test
     public void boardDeletionTest() {
         if (app.getBoardHelper().NumberBoards() >= 2) {
             while (app.getBoardHelper().NumberBoards() > 2) {

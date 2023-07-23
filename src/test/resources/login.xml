@@ -3,9 +3,6 @@
     <test name="log">
         <classes>
             <class name="tests.Login"/>
-
-
-
         </classes>
     </test>
 </suite>

@@ -5,9 +5,7 @@
             <class name="tests.BoardCreation"/>
             <class name="tests.BoardDeletion"/>
 
-
-
-        </classes>
+       </classes>
     </test>
 </suite>
 

@@ -27,20 +27,33 @@ dependencies {
 test {
     useTestNG()
 }
-task log(type:Test){
-    useTestNG(){
+task scoup(type: Test) {
+    useTestNG() {
+        suites 'src/test/resources/scoup.xml'
+    }
+    if (project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
+}
+
+
+task log(type: Test) {
+    useTestNG() {
         def groups = System.getProperty('groups')
-        if(groups!=null){
+        if (groups != null) {
             includeGroups groups
         }
 
-        def suite=System.getProperty('suit','')
-        if(suite.equals('login')){
-            suites'src/test/resources/login.xml'
-
-        }else if (suite.equals('board'))
-           suites'src/test/resources/board.xml'
+        def suite = System.getProperty('suite', '')
+        if (suite.equals('quick')) {
+            suites 'src/test/resources/quick.xml'
+        } else if (suite.equals('login')) {
+            suites 'src/test/resources/login.xml'
+        } else {
+            suites 'src/test/resources/login.xml'
+        }
     }
-    if(project.hasProperty('browser'))
-        systemProperty('browser',${browser})
+
+    if (project.hasProperty('browser'))
+        systemProperty 'browser', $ { browser }
 }

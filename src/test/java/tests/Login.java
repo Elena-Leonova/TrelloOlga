@@ -24,7 +24,7 @@ public class Login extends TestBase{
         app.getUserHelper().pause(10000);
         Assert.assertTrue(app.getUserHelper().isElementPresent(By.xpath("//span[@class='DweEFaF5owOe02 V_PnoJ2AynVwLp G6CmOLx93OUZez']")));
     }
-    @Test (dataProvider = "UserDataProvider",dataProviderClass = DataProviderUser.class,priority = 2)
+    @Test (dataProvider ="UserDataProvider",dataProviderClass = DataProviderUser.class,priority = 2)
     public void positiveLoginTestDP(User user){
         app.getUserHelper().openLoginForm();
         app.getUserHelper().fillLoginForm(user);

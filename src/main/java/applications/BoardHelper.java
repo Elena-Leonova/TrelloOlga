@@ -169,6 +169,9 @@ public class BoardHelper extends HelperBase {
     }
 
 
-
+    public void pressPlus() {
+        click(By.cssSelector("span[class='nch-icon A3PtEe1rGIm_yL J2CpPoHYfZ2U6i gNDonYrNSA1GXJ GWJ3R50Ib8MV6_ C5Wmx8WQiib0oH'] " +
+                "span[class='css-snhnyn']"));
+    }
 }
 

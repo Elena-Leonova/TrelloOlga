@@ -14,10 +14,10 @@ import java.util.List;
 
 public class DataProviderUser {
     @DataProvider
-    public static Iterator<Object[]> UserDataProvider() throws IOException {
+    public static Iterator<Object[]>UserDataProvider() throws IOException {
         List<Object[]> list = new ArrayList<>();
-        //BufferedReader reader = new BufferedReader(new FileReader("C:\\QA38\\Trello\\src\\test\\resources\\data.csv.csv"));
-        BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/test.csv"));
+       //BufferedReader reader = new BufferedReader(new FileReader("C:\\QA38\\Trello\\src\\test\\resources\\data.csv.csv"));
+        BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/testdata.csv"));
         String line = reader.readLine();
         while (line != null) {
             String[] all = line.split(",");//  [or220719@gmail.com] [12345%QWqw]

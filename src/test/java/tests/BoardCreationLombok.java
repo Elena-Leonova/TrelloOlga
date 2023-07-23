@@ -15,7 +15,7 @@ public class BoardCreationLombok extends TestBase{
         }
     }
     @Test(dataProvider = "boardModelLomData",dataProviderClass = MyDataProvider.class)
-    public void boardCreationTest(BoardLombok boardLombok) {
+    public void boardCreationTest1(BoardLombok boardLombok) {
         //BoardLombok boardLombok = BoardLombok.builder().name("AAAA").build();
             app.getUserHelper().pause(1000);
             //  int before = app.getBoardHelper().NumberBoards();
@@ -30,6 +30,22 @@ public class BoardCreationLombok extends TestBase{
             app.getUserHelper().pause(3000);
 
 }
+    @Test (groups = {"smoke"})
+    public void boardCreationTest() {
+        BoardLombok boardLombok = BoardLombok.builder().name("AAAA").build();
+
+        app.getBoardHelper().pressPlus();
+        app.getUserHelper().pause(3000);
+        app.getBoardHelper().pressCreateButton();
+        app.getUserHelper().pause(3000);
+        app.getBoardHelper().fillBoardForm(boardLombok);
+        app.getBoardHelper().submitCreate();
+        app.getUserHelper().pause(3000);
+        app.getBoardHelper().pressBoard();
+        app.getUserHelper().pause(2000);
+
+
+    }
     @Test(dataProvider = "boardData",dataProviderClass = MyDataProvider.class)
     public void boardCreationTest1(String title) {
 

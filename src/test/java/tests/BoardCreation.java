@@ -37,7 +37,6 @@ public class BoardCreation extends TestBase {
 
     @Test(dataProvider = "boardMoodelClassicData", dataProviderClass = MyDataProvider.class)
     public void boardCreationTest1(Board board) {
-
         app.getBoardHelper().pressCreateButton();
         app.getUserHelper().pause(3000);
         app.getBoardHelper().fillBoardForm(board);
@@ -51,7 +50,9 @@ public class BoardCreation extends TestBase {
         app.getUserHelper().pause(3000);
 
     }
-}
+
+    }
+
 
 
 

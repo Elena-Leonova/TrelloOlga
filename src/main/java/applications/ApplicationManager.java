@@ -18,6 +18,8 @@ public class ApplicationManager {
     UserHelper userHelper;
     BoardHelper boardHelper;
     WorkSpaceHelper workSpaceHelper;
+    AtlassianHelper atlassian;
+
     String browser;
 
     public ApplicationManager(String browser) {
@@ -44,6 +46,7 @@ public class ApplicationManager {
         userHelper = new UserHelper(wd);
         boardHelper = new BoardHelper(wd);
         workSpaceHelper = new WorkSpaceHelper(wd);
+        atlassian = new AtlassianHelper(wd);
 
     }
 
@@ -57,6 +60,10 @@ public class ApplicationManager {
 
     public WorkSpaceHelper getWorkSpaceHelper() {
         return workSpaceHelper;
+    }
+
+    public AtlassianHelper getAtlassian() {
+        return atlassian;
     }
 
     public void stop() {

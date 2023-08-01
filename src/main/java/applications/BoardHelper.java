@@ -173,5 +173,16 @@ public class BoardHelper extends HelperBase {
         click(By.cssSelector("span[class='nch-icon A3PtEe1rGIm_yL J2CpPoHYfZ2U6i gNDonYrNSA1GXJ GWJ3R50Ib8MV6_ C5Wmx8WQiib0oH'] " +
                 "span[class='css-snhnyn']"));
     }
+
+
+    public void clickTheAvatar() {
+        click(By.cssSelector("span[title='Olga (olga48105521)']"));
+        pause(2000);
+        click(By.xpath(" //*[text()='Profile and visibility']"));
+        pause(2000);
+        click(By.cssSelector("a[href='https://id.atlassian.com/manage-profile']"));
+        pause(2000);
+                                  //*[text()='Atlassian profile']
+    }
 }
 
